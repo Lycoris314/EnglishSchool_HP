@@ -1,0 +1,553 @@
+@charset "utf-8";
+
+:root {
+    --red1: #FF2A2A;
+    --red2: #FF0033;
+    --red3: #7A051C;
+    --black: #333333;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    width: max-content;
+    color: var(--black);
+
+}
+
+ul {
+    list-style-type: none;
+}
+
+h2 {
+    text-align: center;
+    font-size: 28px;
+}
+
+h2+.line {
+    width: 90px;
+    height: 4px;
+    margin: 20px auto 0;
+    text-align: center;
+    background-color: var(--black);
+}
+
+.center {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+
+
+body {
+    font-family: "Yu Gothic", sans-serif;
+    color: var(--black);
+
+}
+
+header {
+    position: relative;
+    height: 100px;
+
+}
+
+h1 {
+    height: 60px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+h1 a {
+    height: 100%;
+}
+
+h1 img {
+    height: 100%;
+}
+
+
+
+.ham_icon {
+    position: fixed;
+    z-index: 99;
+    height: 80px;
+    aspect-ratio: 1/1;
+    left: calc(100% - 80px);
+    background-color: var(--red1);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.ham_icon:hover {
+    opacity: 0.7;
+}
+
+.ham_icon span {
+    position: absolute;
+    left: 25%;
+    width: 50%;
+    height: 4px;
+    scale: 1 0.5;
+    background-color: white;
+    transition: 0.5s;
+    rotate: 0deg;
+}
+
+.ham_icon span:nth-child(1) {
+    top: 35%;
+}
+
+.ham_icon span:nth-child(2) {
+    top: 50%;
+}
+
+.ham_icon span:nth-child(3) {
+    top: 65%;
+}
+
+/*nav画面*/
+.nav_field {
+    display: none;
+    position: fixed;
+    z-index: 9;
+    width: 100%;
+    height: 100%;
+    background-color: var(--red1);
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.icon {
+    height: 60px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+nav {
+    width: 400px;
+    margin: 0 auto;
+    padding-top: 100px;
+}
+
+
+
+nav ul a {
+    color: white;
+    font-weight: bold;
+    margin: 0 auto 20px;
+}
+
+nav>a {
+    position: relative;
+    margin: 0 auto;
+    font-weight: bold;
+    margin-top: 30px;
+
+}
+
+nav>a:hover>.button {
+    background-color: white;
+    color: var(--red1);
+
+}
+
+nav .button {
+    position: absolute;
+    height: 60px;
+    width: 250px;
+    color: white;
+    border: 1px white solid;
+    transition: 0.5s;
+}
+
+nav .deco {
+    position: relative;
+    top: 5px;
+    left: 5px;
+    height: 60px;
+    width: 250px;
+    border: solid white;
+    border-width: 0 1px 1px 0;
+}
+
+
+/*話して学ぼう！*/
+#section1 {
+    position: relative;
+    padding-bottom: 100px;
+}
+
+.back_img {
+    position: relative;
+    width: 100%;
+    height: 300px;
+}
+
+.back_img>img {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 2s;
+    opacity: 0;
+}
+
+.back_img .shadow {
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0 0 10px 10px white;
+}
+
+.fore {
+    position: relative;
+    z-index: 2;
+}
+
+.fore>p {
+    font-size: 28px;
+    font-weight: bold;
+    padding: 20px;
+    text-shadow: 0 5px 5px white;
+}
+
+.fore a {
+    position: relative;
+    width: calc(100% - 30px);
+    margin: 0 auto;
+    height: 65px;
+    top: 0px;
+    left: 0px;
+    transition: 0.3s;
+}
+
+.fore a:hover {
+    opacity: 0.9;
+    scale: 1.03;
+}
+
+.fore .div1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: var(--red2);
+
+}
+
+.fore .div1 .p1 {
+    position: absolute;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    color: white;
+    font-size: 22px;
+}
+
+.gt {
+    position: relative;
+    top: calc(50% - 10px);
+    left: calc(100% - 40px);
+    width: 18px;
+    height: 18px;
+    rotate: -45deg;
+    border-style: solid;
+    border-width: 0 3px 3px 0;
+    border-color: white;
+}
+
+.fore .div2 {
+    position: relative;
+    top: 7px;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    background-color: var(--red3);
+}
+
+/*BBBが選ばれる理由*/
+
+#section2 .grid {
+    display: grid;
+    grid-template-areas:
+        "a a ."
+        ". b b";
+    grid-template-columns: 15px 1fr 15px;
+    background-color: var(--red1);
+    padding: 40px 0;
+    gap: 40px 0;
+    margin: 40px 0 60px;
+    width: 100%;
+    overflow-x: hidden;
+
+}
+
+.grid_a {
+    grid-area: a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 0 20px 20px 0;
+    padding: 5% 0;
+    gap: 30px;
+
+    translate: -99% 0;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.grid_a img {
+    width: 80px;
+}
+
+.grid_b {
+    grid-area: b;
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px 0 0 20px;
+    padding: 5%;
+    gap: 30px;
+
+    translate: 99% 0;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.grid_b img {
+    width: 50px;
+}
+
+#section2 .p1 {
+    color: var(--red1);
+    font-size: 24px;
+    letter-spacing: 2.4px;
+    font-weight: bold;
+}
+
+#section2 .p2 {
+    font-size: 18px;
+    letter-spacing: 1.8px;
+}
+
+/*受講生の声*/
+
+.voice_container {
+    padding: 50px 0 40px;
+    margin: 0 auto;
+}
+
+.voice_container>li {
+    scale: 0.1 0.1;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.voice1 {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    padding-bottom: 60px;
+}
+
+.student_img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #CCCCCC;
+}
+
+.student_img>img {
+    width: 100%;
+}
+
+.name {
+    text-align: center;
+    font-size: 12px;
+    padding-top: 5px;
+}
+
+.left_arrow {
+    position: relative;
+    rotate: -90deg;
+    translate: 0 -5px;
+    width: 20px;
+    height: 30px;
+    clip-path: polygon(100% 0, 0 50%, 100% 100%);
+    background-color: #E9F1FB;
+}
+
+.right_arrow {
+    position: relative;
+    rotate: 90deg;
+    translate: 0 -5px;
+    width: 20px;
+    height: 30px;
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+    background-color: #E9F1FB;
+}
+
+.comment {
+    width: calc(100% - 30px);
+    text-align: center;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: #E9F1FB;
+}
+
+.voice2 {
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+    padding-bottom: 60px;
+}
+
+
+/*スクールの概要*/
+
+#section4 {
+    padding: 60px 0 60px 0;
+    background-image: url(./img/bg.gif);
+    animation: 10s linear infinite bg_animation;
+}
+
+@keyframes bg_animation {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    100% {
+        background-position: -700px 700px;
+    }
+}
+
+#section4 ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    padding: 50px 15px 0;
+    gap: 30px;
+}
+
+#section4 li {
+    padding: 30px;
+    border-radius: 20px;
+    background-color: white;
+}
+
+#section4 li p:first-child {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center
+}
+
+#section4 li p:nth-child(2) {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center
+}
+
+#section4 li p:nth-child(3) {
+    font-size: 16px;
+    padding: 20px 0 0;
+}
+
+/*まずは無料で、BBBの英会話を試してみませんか？*/
+
+#section5 {
+    padding: 100px 0 100px;
+}
+
+#section5 h2 {
+    font-size: 24px;
+    padding: 0 15px;
+}
+
+#section5 a {
+
+    height: 70px;
+    width: calc(100% - 30px);
+    border-radius: 40px;
+    margin: 40px auto 0;
+    color: white;
+    background-color: var(--red1);
+    border: var(--red1) solid 3px;
+    font-size: 24px;
+    font-weight: bold;
+    transition: 0.5s;
+}
+
+#section5 a:hover {
+    background-color: white;
+    color: var(--red1);
+}
+
+#section5 p {
+    text-align: center;
+    font-size: 16px;
+    padding: 0 15px;
+}
+
+/*フッター*/
+
+footer {
+    background-color: #E8E8E8;
+    padding: 0 20px;
+}
+
+footer>ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin: 0 auto;
+    padding: 50px 0 50px;
+    gap: 30px 0;
+
+}
+
+footer>ul>li {
+    flex-basis: 25%;
+}
+
+footer>ul>li>p {
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.sublist {
+    padding: 10px 0 0 10px;
+}
+
+.sublist a {
+    /*カンプは16px*/
+    font-size: 13px;
+    margin-bottom: 5px;
+    ;
+    letter-spacing: 1.6px;
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.sublist a:hover {
+    opacity: 0.6;
+}
+
+footer>p {
+    padding-bottom: 20px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-align: center;
+}
